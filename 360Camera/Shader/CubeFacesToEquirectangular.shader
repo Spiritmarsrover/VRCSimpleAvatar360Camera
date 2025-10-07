@@ -157,6 +157,8 @@ Shader "Custom/CubeFacesToEquirectangular"
 					// Assume the output texture is 2:1 equirectangular; uv in [0,1]^2
 					float2 uv = i.uv;
 
+					uv.x = 1.0 - uv.x;
+
 					// Convert UV into lat-long direction
 					float3 dir = LatLongToDir(uv);
 
